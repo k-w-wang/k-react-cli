@@ -8,7 +8,7 @@ export interface ILogin {
 export const login = (params: ILogin) => {
     return axios.request({
         method: "post",
-        url: "/c3/api/v1/login",
+        url: "",
         data: params
     })
 }
@@ -16,20 +16,20 @@ export const login = (params: ILogin) => {
 export const logout = () => {
     return axios.request({
         method: "post",
-        url: "/c3/api/v1/logout",
+        url: "",
     })
 }
 // 注册
 export const register = () => {
     return axios.request({
         method: "post",
-        url: "/c3/api/v1/register",
+        url: "",
     })
 }
 // 修改密码
 export const changePassword = () => {
     return axios.request({
         method: "post",
-        url: "/c3/api/v1/change_password",
+        url: "",
     })
 }

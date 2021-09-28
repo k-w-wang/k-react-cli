@@ -27,12 +27,6 @@ const PageMain = (props: any) => {
             <Menu.Item key="1" >
               <Link to="/overview">首页</Link>
             </Menu.Item>
-            <Menu.Item key="2" icon={<PieChartOutlined />}>
-              <Link to="/application">我的应用</Link>
-            </Menu.Item>
-            <Menu.Item key="3" icon={<PieChartOutlined />}>
-              <Link to="/coveragearea">覆盖区域</Link>
-            </Menu.Item>
           </Menu>
         </Sider>
         <Layout>{props.children}</Layout>
