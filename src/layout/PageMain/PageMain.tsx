@@ -5,11 +5,19 @@ import {
   PieChartOutlined,
 } from '@ant-design/icons';
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 const { Sider } = Layout;
+
 const PageMain = (props: any) => {
+  const token = window.localStorage.getItem("token");
+  useEffect(()=>{
+    if(!token) {
+      window.location.href = window.location.origin + "/#/login"
+    }
+  },[token])
   return (
     <div id="components-layout-demo-side">
-      <Layout style={{ minHeight: "100vh" }}>
+       <Layout style={{ minHeight: "100vh" }}>
         <Sider
           collapsible
           theme="dark"

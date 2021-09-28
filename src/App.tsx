@@ -9,7 +9,7 @@ import { IntlProvider } from "react-intl";
 import zh_CN from "./locales/zh_CN";
 import en_JS from "./locales/en_US";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
 import store from './store';
 

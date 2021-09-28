@@ -6,6 +6,7 @@ import { Layout } from "antd";
 import Overview from "../../routers/Overview";
 import Application from "../../routers/Application";
 import CoverageArea from "../../routers/CoverageArea";
+import Error from "../../routers/Error";
 
 const PageContent = () => {
   // const getComponents: (moduleName:string) => React.FC<{}> | ErrorConstructor  = (moduleName: string) => {
@@ -22,7 +23,8 @@ const PageContent = () => {
         <Route path="/overview" component={Overview} exact />
         <Route path="/application" component={Application} exact />
         <Route path="/coveragearea" component={CoverageArea} exact />
-        {/* <Route path="/error/:errorType" component={Error} exact /> */}
+        <Route path="/error/:errorType" component={Error} exact />
+        <Route path="" component={Error} exact />
       </Switch>
     </Layout.Content>
   );
