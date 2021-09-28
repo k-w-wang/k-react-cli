@@ -6,14 +6,15 @@ import { useFormatMessage } from "../../unitl/useFormatMessage";
 import { login, ILogin } from "../../apis/login";
 const EmailLogin = () => {
     const onFinish = async (values: ILogin) => {
-        // login(values).then((res)=>{
-        //     console.log(res);
+        login(values).then((res)=>{
+            console.log(res);
 
-        // }).catch(err => {
-        //     console.log(err);
-        // })
-        const res = await login(values)
-        console.log(res);
+        }).catch(err => {
+            window.localStorage.setItem("token",'token')
+            console.log(err);
+        })
+        // const res = await login(values)
+        // console.log(res);
     };
     return (
         <div className="email_login">

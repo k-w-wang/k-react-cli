@@ -5,11 +5,19 @@ import {
   PieChartOutlined,
 } from '@ant-design/icons';
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 const { Sider } = Layout;
+
 const PageMain = (props: any) => {
+  const token = window.localStorage.getItem("token");
+  useEffect(()=>{
+    if(!token) {
+      window.location.href = window.location.origin + "/#/login"
+    }
+  },[token])
   return (
     <div id="components-layout-demo-side">
-      <Layout style={{ minHeight: "100vh" }}>
+       <Layout style={{ minHeight: "100vh" }}>
         <Sider
           collapsible
           theme="dark"
@@ -18,12 +26,6 @@ const PageMain = (props: any) => {
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
             <Menu.Item key="1" >
               <Link to="/overview">首页</Link>
-            </Menu.Item>
-            <Menu.Item key="2" icon={<PieChartOutlined />}>
-              <Link to="/application">我的应用</Link>
-            </Menu.Item>
-            <Menu.Item key="3" icon={<PieChartOutlined />}>
-              <Link to="/coveragearea">覆盖区域</Link>
             </Menu.Item>
           </Menu>
         </Sider>
